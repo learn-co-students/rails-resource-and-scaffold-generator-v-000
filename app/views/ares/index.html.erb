@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ares.each do |are| %>
+      <tr>
+        <td><%= are.title %></td>
+        <td><%= are.body %></td>
+        <td><%= link_to 'Show', are %></td>
+        <td><%= link_to 'Edit', edit_are_path(are) %></td>
+        <td><%= link_to 'Destroy', are, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Are', new_are_path %>
