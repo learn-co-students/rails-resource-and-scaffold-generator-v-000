@@ -1,5 +1,6 @@
 # Resource and Scaffold Generator
 
+
 ## Objectives
 
 1. Use the resource generator
