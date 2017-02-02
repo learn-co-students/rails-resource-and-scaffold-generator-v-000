@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
   end
-
+ #change
   # POST /articles
   # POST /articles.json
   def create
