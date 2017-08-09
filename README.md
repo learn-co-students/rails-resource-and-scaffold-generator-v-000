@@ -65,7 +65,10 @@ invoke  scss
 create    app/assets/stylesheets/scaffolds.scss
 ```
 
-If you remember back to the [lesson on generators](https://github.com/learn-co-curriculum/rails-generators-readme) you will remember that the other generators ( `migrations`, `controllers`, and `resources`) created a structure and backend functionality for our code. However, scaffolds actually go beyond the other generators and create both the front- and back-end code needed for CRUD features. If you start up the Rails server and navigate to `localhost:3000/articles` you will see the screens below:
+If you remember back to the [lesson on generators](https://github.com/learn-co-curriculum/rails-generators-readme) you will remember that the other generators ( `migrations`, `controllers`, and `resources`) created a structure and backend functionality for our code. However, scaffolds actually go beyond the other generators and create both the front- and back-end code needed for CRUD features. Create a development database migration with this command:
+```bin/rake db:migrate RAILS_ENV=development```
+
+If you start up the Rails server and navigate to `localhost:3000/articles` you will see the screens below:
 
 ![Scaffold Screen](https://s3.amazonaws.com/flatiron-bucket/readme-lessons/scaffolds.png)
 
