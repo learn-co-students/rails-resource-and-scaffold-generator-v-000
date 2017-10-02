@@ -2,3 +2,80 @@
   [1m[35m (0.0ms)[0m  select sqlite_version(*)
   [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20171002140458)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171002140458"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 96.33.192.174 at 2017-10-02 14:07:20 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (50.7ms)
+Completed 200 OK in 72ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for 96.33.192.174 at 2017-10-02 14:07:26 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (52.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 3302ms (Views: 3247.2ms | ActiveRecord: 52.7ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 96.33.192.174 at 2017-10-02 14:07:29 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/scaffolds.self-67b73b140a748bb5c68f28b7396833479390f9abe6c70a30f53eedd08b3e29c1.css?body=1" for 96.33.192.174 at 2017-10-02 14:07:29 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 96.33.192.174 at 2017-10-02 14:07:30 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 96.33.192.174 at 2017-10-02 14:07:30 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/articles/new" for 96.33.192.174 at 2017-10-02 14:07:34 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (19.0ms)
+  Rendered articles/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 59ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/articles" for 96.33.192.174 at 2017-10-02 14:08:19 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XFsAqM+R+KgqGTVQYEE/zFzFfQz+mzSZq6ERFwaTiKlyuPQvA5xqK9MElVpy3zDX6nlNa/OwJXyBPUahRp0V+Q==", "article"=>{"title"=>"Learning Scaffolds", "body"=>"In this lesson we get a overview of the generate scaffold command for Rails."}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Learning Scaffolds"], ["body", "In this lesson we get a overview of the generate scaffold command for Rails."], ["created_at", "2017-10-02 14:08:19.575725"], ["updated_at", "2017-10-02 14:08:19.575725"]]
+  [1m[36m (57.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://159.203.91.59:30000/articles/1
+Completed 302 Found in 64ms (ActiveRecord: 58.3ms)
+
+
+Started GET "/articles/1" for 96.33.192.174 at 2017-10-02 14:08:19 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 96.33.192.174 at 2017-10-02 14:08:26 +0000
+Cannot render console from 96.33.192.174! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/_form.html.erb (2.0ms)
+  Rendered articles/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 89ms (Views: 87.5ms | ActiveRecord: 0.1ms)
