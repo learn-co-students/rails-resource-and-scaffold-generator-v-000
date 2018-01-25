@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @arte.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @arte.body %>
+</p>
+
+<%= link_to 'Edit', edit_arte_path(@arte) %> |
+<%= link_to 'Back', artes_path %>
