@@ -2,3 +2,120 @@
   [1m[35m (0.0ms)[0m  select sqlite_version(*)
   [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateArticles (20180213054114)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180213054114"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2018-02-12 21:42:31 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/hambrice/.rvm/gems/ruby-2.3.3/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 27ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2018-02-12 21:42:46 -0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.5ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1636ms (Views: 1632.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/articles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/assets/scaffolds.self-e648bcc1a0d2a527a343dee31f007f3a8917f79429811921f2d120ece65a0f3b.css?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2018-02-12 21:42:48 -0800
+
+
+Started GET "/articles/new" for ::1 at 2018-02-12 21:42:51 -0800
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (31.7ms)
+  Rendered articles/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 73ms (Views: 67.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/articles" for ::1 at 2018-02-12 21:42:56 -0800
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rECfUhgOW7pQaidFDs3Jyjy97lWuJyKuP8Tfw54YD7K5bcT7Es3g24P8+rLWYEIuXjLvJV5IztxrFl5DmUhKcA==", "article"=>{"title"=>"Testing", "body"=>"wtf"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Testing"], ["body", "wtf"], ["created_at", "2018-02-13 05:42:56.458016"], ["updated_at", "2018-02-13 05:42:56.458016"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/1" for ::1 at 2018-02-12 21:42:56 -0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 45ms (Views: 35.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for ::1 at 2018-02-12 21:43:01 -0800
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/_form.html.erb (2.1ms)
+  Rendered articles/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/1" for ::1 at 2018-02-12 21:43:05 -0800
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PX56R11eYNi+GwjrwP8uybeQFwrcPZArgkcqhaLcLekoUyHuV53buW2N1RwYUqUt1R8WeixSfFnWlasFpYxoKw==", "article"=>{"title"=>"Testing", "body"=>"wtflol"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?  [["body", "wtflol"], ["updated_at", "2018-02-13 05:43:05.008652"], ["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/1" for ::1 at 2018-02-12 21:43:05 -0800
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for ::1 at 2018-02-12 21:43:07 -0800
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/articles/1" for ::1 at 2018-02-12 21:43:15 -0800
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"a8G+CTyXMD5IZGWafVSnlOwVufFejx7gY3sAtb3T7u5+7OWgNlSLX5vyuG2l+Sxwjpq4ga7g8pI3qYE1uoOrLA==", "id"=>"1"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 1]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/articles" for ::1 at 2018-02-12 21:43:15 -0800
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.2ms)
