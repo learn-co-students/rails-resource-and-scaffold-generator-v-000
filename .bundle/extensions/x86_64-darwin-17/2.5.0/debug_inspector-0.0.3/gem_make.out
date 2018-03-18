@@ -1,0 +1,15 @@
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/resource-generator-routes/.bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+/Users/mikekruszewski/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180310-24353-nb8zf5.rb extconf.rb
+creating Makefile
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/resource-generator-routes/.bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/resource-generator-routes/.bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/mikekruszewski/Development/flatiron/Rails/resource-generator-routes/.bundle/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 debug_inspector.bundle ./.gem.20180310-24353-uvbh5z

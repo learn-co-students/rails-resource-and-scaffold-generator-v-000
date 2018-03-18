@@ -1,5 +1,5 @@
 # Resource and Scaffold Generator
-
+read
 ## Objectives
 
 1. Use the resource generator
