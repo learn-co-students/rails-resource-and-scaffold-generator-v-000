@@ -72,3 +72,4 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :body)
     end
 end
+ # something needs to change in order to complete the pull request
