@@ -1,4 +1,4 @@
-# Resource and Scaffold Generator
+la# Resource and Scaffold Generator
 
 ## Objectives
 
