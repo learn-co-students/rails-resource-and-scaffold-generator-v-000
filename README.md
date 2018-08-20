@@ -18,7 +18,7 @@ First let's discuss why it's not a great idea to use scaffolds in real world dev
 ```bash
 rails g scaffold Article title:string body:text
 ```
-
+.
 Let's review the console log to see what this creates for us:
 
 ```shell
