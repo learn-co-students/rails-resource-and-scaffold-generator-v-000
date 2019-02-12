@@ -9,6 +9,7 @@
 5. Describe the code (except for form partials) related to a scaffold
 6. Use the resources route helper to generate the RESTful routes
 
+asdfdf
 ## Intro
 
 In a [previous lesson](https://github.com/learn-co-curriculum/rails-generators-readme) we reviewed each of the popular generators in Rails. I purposefully left one out: the Rails `scaffold` generator. The reason for this is mainly due to the fact that it's not considered a good practice to use scaffolds in a production application. With that being said, I do think it's important to study scaffolds since they can be a great reference for how we can build CRUD functionality into our apps.
